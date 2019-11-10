@@ -1,0 +1,38 @@
+Lifetasker\Task:
+  type: entity
+  table: tasks
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 30
+      fixed: false
+    created:
+      type: datetime
+      default: '2000-01-01 00:00:00'
+      nullable: true
+    deadline:
+      type: datetime
+      default: '2000-01-01 00:00:00'
+      nullable: true
+    data:
+      type: json
+      nullable: false
+    metadata:
+      type: json
+      nullable: false
+  oneToMany:
+    children:
+      targetEntity: \Lifetasker\Task
+      mappedBy: parent
+  manyToOne:
+    parent:
+      targetEntity: \Lifetasker\Task
+      inversedBy: children
+    project:
+      targetEntity: \Lifetasker\Project
+      inversedBy: tasks

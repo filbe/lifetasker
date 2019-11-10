@@ -1,0 +1,9 @@
+account:
+  pattern: /accounts/{id|int}
+  controller: Account
+  action: get
+
+dump:
+  pattern: /dump
+  controller: Dump
+  action: dump

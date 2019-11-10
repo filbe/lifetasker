@@ -1,0 +1,14 @@
+
+common:
+  pattern: /common
+
+frontpage:
+  pattern: /
+
+admin:
+  pattern: /admin
+account:
+  pattern: /account
+
+lifetasker:
+  pattern: /api/v1

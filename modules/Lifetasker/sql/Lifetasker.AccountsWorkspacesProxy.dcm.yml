@@ -1,0 +1,23 @@
+Lifetasker\AccountsWorkspacesProxy:
+  type: entity
+  table: accounts_workspaces_proxy
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  manyToOne:
+    account:
+      targetEntity: \Lifetasker\Account
+      inversedBy: workspaceProxies
+      joinColumn:
+        name: account_id
+        referencedColumnName: id
+      cascade: [ "persist" ]
+    workspace:
+      targetEntity: \Lifetasker\Workspace
+      inversedBy: accountProxies
+      joinColumn:
+        name: workspace_id
+        referencedColumnName: id
+      cascade: [ "persist" ]

@@ -1,0 +1,33 @@
+{
+  "name": "joendigimedia/lifetasker",
+  "type": "project",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "bin-dir": "./",
+    "component-dir": "web"
+  },
+  "repositories": [{
+    "url": "https://github.com/kehikko/kernel.git",
+    "type": "git"
+  }],
+  "require":
+  {
+    "twig/twig": "^2.0",
+    "symfony/yaml": "^3.2",
+    "phpFastCache/phpFastCache": "^4.3",
+    "mtdowling/cron-expression": "^1.1",
+    "pear/console_commandline": "^1.2",
+    "kehikko/kernel": "^1.0",
+    "kehikko/core": "^1.0",
+    "kehikko/route-common": "^1.0",
+    "kehikko/account": "^1.2",
+    "kehikko/route-account": "^1.1",
+    "kehikko/route-admin": "^1.1",
+    "kehikko/data": "^1.0",
+    "symfony/orm-pack": "^1.0",
+    "doctrine/orm": "^2.5",
+    "composer/installers": "^1.3"
+
+  }
+}

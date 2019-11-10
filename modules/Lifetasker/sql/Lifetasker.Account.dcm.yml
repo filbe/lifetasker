@@ -1,0 +1,62 @@
+Lifetasker\Account:
+  type: entity
+  table: accounts
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    firstname:
+      type: string
+      nullable: false
+      length: 30
+      fixed: false
+    callingname:
+      type: string
+      length: 30
+      fixed: false
+    lastname:
+      type: string
+      nullable: false
+      length: 30
+      fixed: false
+    phone:
+      type: string
+      length: 30
+      fixed: false
+    email:
+      type: string
+      length: 30
+      fixed: false
+    admin:
+      type: boolean
+      nullable: true
+    password:
+      type: string
+      nullable: true
+      length: 256
+      fixed: false
+    language:
+      type: string
+      nullable: true
+      length: 5
+      fixed: true
+    registered:
+      type: datetime
+      nullable: false
+      default: '2000-01-01 00:00:00'
+      column: registered
+    lastVisit:
+      type: datetime
+      default: '2000-01-01 00:00:00'
+      column: last_visit
+    metadata:
+      type: json
+      nullable: true
+  oneToMany:
+    workspaceProxies:
+      targetEntity: \Lifetasker\AccountsWorkspacesProxy
+      mappedBy: account
+      fetch: EAGER
+      cascade: [ "persist", "remove" ]

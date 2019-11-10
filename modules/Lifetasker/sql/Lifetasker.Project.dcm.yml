@@ -1,0 +1,36 @@
+Lifetasker\Project:
+  type: entity
+  table: projects
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 30
+      fixed: false
+    created:
+      type: datetime
+      default: '2000-01-01 00:00:00'
+      nullable: true
+    data:
+      type: json
+      nullable: false
+    metadata:
+      type: json
+      nullable: false
+  oneToMany:
+    workspaceProxies:
+      targetEntity: \Lifetasker\WorkspacesProjectsProxy
+      fetch: LAZY
+      mappedBy: workspaces
+      orphanRemoval: true
+      cascade: [ "persist", "remove" ]
+    tasks:
+      targetEntity: \Lifetasker\Task
+      fetch: LAZY
+      mappedBy: tasks
+      orphanRemoval: true
+      cascade: [ "persist", "remove" ]

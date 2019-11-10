@@ -1,0 +1,27 @@
+<h1>Workspaces</h1><br>
+<div class="container-fluid">
+	<div class="row">
+	{% for workspace in workspaces %}
+		<div class="col">
+			<h2>{{workspace.name}}</h2>
+			<h3>Projects</h3>
+			<div class="row">
+			{% for project in workspace.projects %}
+				<div class="col">
+					<h4>{{ project.name }}</h4>
+					<h5>Tasks</h5>
+					<div class="row">
+						{% for task in project.tasks %}
+							<div class="col">
+								<h6>{{ task.name }}</h6>
+								{{ task.data }}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
